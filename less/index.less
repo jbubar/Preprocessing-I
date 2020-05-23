@@ -1,5 +1,4 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -48,12 +47,118 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
 
-html, body {
-    height: 100%;
-}
+/**************************************** CSS ***********************************************/
 
+.whole-img{
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.img-fit{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-colomn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-size: 1.8rem;
+}
+body{
+    margin: 10px;
+    img{
+        .whole-img();
+    }
+    .container{
+        background-image: url(http://cdn.shutterstock.com/shutterstock/videos/8085115/thumb/1.jpg)
+    }
+    .head{
+        .nav{
+            .flex-row();
+            @media (max-width: 900px){
+                .flex-colomn();
+            }
+            margin: 10px;
+            .nav-bar{
+                .flex-row();
+                @media (max-width: 900px){
+                    .flex-colomn();
+                }
+                margin: 10px;
+                li{
+                    margin: 5px;
+                    padding: 15px;
+                    border: solid transparent;
+                    &:hover{
+                        border-bottom:solid green;
+                        color: green;
+                        background-color: lightcyan;
+                    }
+                }
+            }
+        }
+
+    }
+    .top-content{
+        .flex-colomn();
+        .title1{
+            .flex-colomn();
+            h1{
+                font-size: 2rem;
+                margin: 40px 10px;
+            }
+            h2{
+                font-size: 1.3rem;
+                margin: 10px;
+                margin-bottom: 80px;
+            }
+
+        }
+        .img{
+            .flex-colomn();
+            img{
+                .whole-img();
+                border-radius: 45%;
+                max-width: 200px;
+                max-height: 200px;
+            }
+        }
+        margin-bottom: 80px;
+    }
+    .about{
+        .flex-colomn();
+        .text-container{
+            .flex-colomn();
+            h2{
+                font-size: 1.8rem;
+                margin: 10px;
+            }
+            p{
+                line-height: 1.5;
+                letter-spacing: 2px;
+                margin: 10px;
+            }
+            margin-bottom: 100px;
+        }
+        .education{
+            .flex-colomn();
+            .display{
+                .flex-row();
+                @media (max-width: 900px){
+                    .flex-colomn();
+                }
+            }
+        }
+    }
+}
